@@ -27,7 +27,6 @@ namespace InventoryManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Welcome to Rizlyn Footwear Industry");
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,6 +91,14 @@ namespace InventoryManagementSystem
             {
                 // if naa ang user sa database
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                homePage obj = new homePage ();
+                obj.ShowDialog();
+                this.Hide();
+
+                if(obj.close == true)
+                {
+                    this.Show();
+                }
                 // sunod sa login
             }
             else
@@ -102,11 +109,24 @@ namespace InventoryManagementSystem
         }
 
         public Boolean switchRegister = false;
+        
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            RegistrationGUI2 obj = new RegistrationGUI2();
+            obj.ShowDialog();
+            this.Hide();
+            if (obj.retVal==true)
+            {
+                
+                this.Show();
+                
+            }
+
+    
+            /*
             switchRegister = true;
             this.Close();
-
+            */
         }
 
         private void tbPassword_KeyDown(object sender, KeyEventArgs e)
@@ -118,7 +138,7 @@ namespace InventoryManagementSystem
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                button1_Click(sender, e);
+                button1_Click_1(sender, e);
             }
         }
 
@@ -126,7 +146,7 @@ namespace InventoryManagementSystem
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                button1_Click(sender, e);
+                button1_Click_1(sender, e);
             }
         }
         public Boolean close = false;
@@ -134,6 +154,16 @@ namespace InventoryManagementSystem
         {
             close = true;
             this.Close();
+        }
+
+        private void LoginPage2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

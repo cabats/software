@@ -18,25 +18,39 @@ namespace InventoryManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          
+
+            LoginPage2 loginForm = new LoginPage2();
+            RegistrationGUI2 registrationForm = new RegistrationGUI2();
+            homePage home = new homePage();
+
+            Application.Run(loginForm);
+
+           
+
+            /*
 
             while (true)
-            {
-                LoginPage2 loginForm = new LoginPage2();
-                RegistrationGUI2 registrationForm = new RegistrationGUI2();
+                        {
+                            LoginPage2 loginForm = new LoginPage2();
+            RegistrationGUI2 registrationForm = new RegistrationGUI2();
+            homePage home = new homePage();
 
-                Application.Run(loginForm);
+                            Application.Run(loginForm);
+                            if(loginForm.open)
+                            {
+                                home.ShowDialog();
+                            }
 
-                if (loginForm.switchRegister)
-                {
-                    
-                    registrationForm.ShowDialog();
-                }
-                if(loginForm.close == true || loginForm.open == true)
-                {
-                    break;
-                }
-            }
+                            if (loginForm.switchRegister)
+                            {
+                                registrationForm.ShowDialog();    
+                            }
+
+                            if(loginForm.close == true || loginForm.open == true)
+                            {
+                                break;
+                            }
+                        }*/
         }
     }
  }
